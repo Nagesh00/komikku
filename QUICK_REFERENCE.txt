@@ -1,0 +1,72 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                  KOMIKKU FORK - QUICK REFERENCE                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📦 WHAT'S READY:
+  ✓ PDF support fully implemented
+  ✓ Workflows configured (no Firebase needed)
+  ✓ Dummy config files created
+  ✓ Build scripts ready
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 SETUP IN 3 COMMANDS:
+
+  1. Generate keystore:
+     $ ./scripts/generate-keystore.sh
+
+  2. Add 4 GitHub secrets: (see output from step 1)
+     - SIGNING_KEY
+     - ALIAS  
+     - KEY_STORE_PASSWORD
+     - KEY_PASSWORD
+
+  3. Push to your fork:
+     $ git add .
+     $ git commit -m "Add PDF support"
+     $ git push origin master
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🏗️  BUILD COMMANDS:
+
+  CI Build (automatic):
+    $ git push origin master
+    → APK in Actions artifacts
+
+  Preview Release (manual):
+    → Actions → Preview Builder → Run workflow
+    → Draft prerelease created
+
+  Production Release (tag):
+    $ git tag v1.0.0
+    $ git push origin v1.0.0
+    → Draft release created
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 TEST PDF SUPPORT:
+
+  1. Build & install APK
+  2. Create: /Komikku/local/TestManga/Chapter1.pdf
+  3. Open Komikku → Local Source
+  4. Enjoy! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION:
+
+  FORK_SETUP.md              → Detailed setup guide
+  COMPLETE_SETUP_SUMMARY.md  → Full reference
+  scripts/verify-setup.sh    → Verify your setup
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  DON'T COMMIT:
+  - *.jks, *.keystore
+  - signing_key_base64.txt
+  (Already in .gitignore)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                        Ready to build! 🚀

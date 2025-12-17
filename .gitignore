@@ -20,4 +20,6 @@ local.properties
 /app/client_secrets.json
 /app/google-services.json
 *.jks
+*.keystore
+signing_key_base64.txt
 app/standard/preview/*

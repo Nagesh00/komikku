@@ -11,6 +11,7 @@ android {
 dependencies {
     implementation(libs.jsoup)
     implementation(libs.libarchive)
+    implementation(libs.pdfium)
     implementation(libs.unifile)
     // KMK -->
     implementation(projects.core.common)

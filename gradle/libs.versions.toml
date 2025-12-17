@@ -33,6 +33,7 @@ jsoup = "org.jsoup:jsoup:1.21.2"
 disklrucache = "com.jakewharton:disklrucache:2.0.2"
 unifile = "com.github.komikku-app:UniFile:084a54140a"
 libarchive = "me.zhanghai.android.libarchive:library:1.1.6"
+pdfium = "io.github.afrozaar:android-pdfium:1.9.0"
 
 sqlite-framework = { module = "androidx.sqlite:sqlite-framework", version.ref = "sqlite" }
 sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "sqlite" }
