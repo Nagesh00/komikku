@@ -20,6 +20,7 @@ import mihon.core.archive.ArchiveReader
 import mihon.core.archive.ZipWriter
 import mihon.core.archive.archiveReader
 import mihon.core.archive.epubReader
+import mihon.core.archive.pdfReader
 import nl.adaptivity.xmlutil.core.AndroidXmlReader
 import nl.adaptivity.xmlutil.serialization.XML
 import tachiyomi.core.common.i18n.stringResource
@@ -446,6 +447,15 @@ actual class LocalSource(
                         val entry = epub.getImagesFromPages().firstOrNull()
 
                         entry?.let { coverManager.update(manga, epub.getInputStream(it)!!) }
+                    }
+                }
+                is Format.Pdf -> {
+                    format.file.pdfReader(context).use { pdf ->
+                        if (pdf.getPageCount() > 0) {
+                            coverManager.update(manga, pdf.getPageInputStream(0))
+                        } else {
+                            null
+                        }
                     }
                 }
             }

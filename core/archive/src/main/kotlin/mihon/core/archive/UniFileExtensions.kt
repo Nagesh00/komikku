@@ -10,3 +10,5 @@ internal fun UniFile.openFileDescriptor(context: Context, mode: String): ParcelF
 fun UniFile.archiveReader(context: Context) = openFileDescriptor(context, "r").use { ArchiveReader(it) }
 
 fun UniFile.epubReader(context: Context) = EpubReader(archiveReader(context))
+
+fun UniFile.pdfReader(context: Context) = PdfReader(context, openFileDescriptor(context, "r"))
